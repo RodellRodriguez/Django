@@ -26,7 +26,7 @@ SECRET_KEY = 'kylhclh2#6%p!*gn%u3sncm03mwjz)+j!(_a(itdx^1%k!#+ge'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['intense-cove-86836.herokuapp.com',]
 
 # Application definition
 
