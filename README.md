@@ -27,9 +27,9 @@ Finally, I started reading [Two Scoops of Django](https://www.twoscoopspress.com
 1. Improve the functionality of the Django Girls Blog and add new features. I am aware that the tutorials only cover the bare basics of what Django is capable of and that there is so much more to learn. I'm definitely looking forward to learning how to implement more advanced features in the back-end!
 
 2. Create a website with my own ideas. Some ideas include: 
-* Display NBA stats in tabular format
-* Basketball Forum
-* Display Stock information
+	* Display NBA stats in tabular format
+	* Basketball Forum
+	* Display Stock information
 
 3. Thoroughly understand Two Scoops of Django book in the midsts of implementing/improving the websites
 
