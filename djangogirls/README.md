@@ -4,7 +4,7 @@
 
 [My first website I've ever deployed to production!](https://rodellblog.herokuapp.com/) The website was produced by following the [Django Girls Tutorial](https://tutorial.djangogirls.org/en/) and the website is deployed via [Heroku](https://devcenter.heroku.com/articles/deploying-python).
 
-The tutorial provides instruction to produce a blog that allows the user to CRUD (Create Read Update Delete) blogs. However this is all done on your local computer so I looked into how to deploy the website onto production servers. The tutorial covers the bare basics so there is SO much room for improvement! (This is a good thing).
+The tutorial provides instruction to produce a blog that allows the user to CRUD (Create Read Update Delete) blogs. The tutorial covers the bare basics so there is SO much room for improvement! (This is a good thing).
 
 See Improvement List below for features I plan on implementing.
 
