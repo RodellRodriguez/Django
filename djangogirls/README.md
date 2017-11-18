@@ -7,6 +7,7 @@
 **Dependencies**
 * Python 3.5
 * Django
+* PostgreSQL
 * Heroku
 * Bootstrap
 * CSS
