@@ -10,7 +10,5 @@ Finally I started reading [Two Scoops of Django](https://www.twoscoopspress.com/
 
 **Dependencies**
 * Python 3.5
-* Pandas
-* Requests
-* Matplotlib
-* Jupyter Notebook
+* Django
+* Heroku
