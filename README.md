@@ -12,7 +12,7 @@ This repository will document all of my efforts in learning the Django framework
 3. [Django Girls](https://tutorial.djangogirls.org/en/)
 	* Create a blog
 
-The Django Girls tutorial was the least extensive out of the 3 tutorials (in regards to covering Django's features) that I've done and because of its simplicity I decided to use that tutorial as my first attempt to deploy my first website on [Heroku](https://devcenter.heroku.com/articles/deploying-python). My approach is to utilize all of the additional features covered in the first 2 tutorials I completed to implement them myself in the Django Girls blog website I created. That is why I chose not to upload the code I wrote for the first two tutorials. I'd rather not bloat up my repo with tutorials.
+The Django Girls tutorial was the least extensive out of the 3 tutorials (in regards to covering Django's features) that I've done and because of its simplicity I decided to use that tutorial as my first attempt to [deploy my first website](https://rodellblog.herokuapp.com) on [Heroku](https://devcenter.heroku.com/articles/deploying-python). My approach is to utilize all of the additional features covered in the first 2 tutorials I completed to implement them myself in the Django Girls blog website I created. That is why I chose not to upload the code I wrote for the first two tutorials. I'd rather not bloat up my repo with tutorials.
 
 Finally, I started reading [Two Scoops of Django](https://www.twoscoopspress.com/) to implement best practices in using Django.
 
