@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login
+from django.views.generic import View
 from .models import Post
-from .forms import PostForm
-
+from .forms import PostForm, UserForm
 
 def post_list(request):
     posts = Post.objects.filter(
@@ -24,7 +24,7 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('blog:post_detail', pk=post.pk)
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -39,7 +39,7 @@ def post_edit(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('blog:post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -48,5 +48,42 @@ def post_edit(request, pk):
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    return redirect('post_list')
+    return redirect('blog:post_list')
 
+
+class UserFormView(View):
+    form_class = UserForm
+    template_name = 'blog/registration_form.html'
+
+    #display blank form
+    def get(self, request):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form':form})
+
+    # process form data
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+
+            # creates an object from the form locally but doesn't save it to DB yet
+            user = form.save(commit=False)
+
+            # cleaned (normalized) data for DB
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user.set_password(password)
+
+            # save data to DB
+            user.save()
+
+            # returns User objects if credentials are correct
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                # user account is not banned or disabled
+                if user.is_active:
+                    login(request, user)
+                    return redirect('blog:post_list')
+
+        return render(request, self.template_name, {'form':form})
