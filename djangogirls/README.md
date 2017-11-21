@@ -21,7 +21,8 @@ See my [Master Django Repo](https://github.com/RodellRodriguez/Django) for addit
 
 ## Improvement List
 
-- [ ] Include user registration/authentication functionality. I currently have only admin as the user
+- [x] Include user registration/authentication functionality. I currently have only admin as the user
+- [ ] Include user registration button
 - [ ] Create a "settings" directory to distinguish development settings from production settings. I currently use the same settings in development and production. One major consequence is having my DEBUG mode turned on.
 - [ ] Look into deploying the website via [Docker](https://www.docker.com/what-docker) to learn modern real-life automated deployment practices
 - [ ] Create automated tests to practice healthy coding habits and spot more bugs 
