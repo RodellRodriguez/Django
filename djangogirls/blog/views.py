@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from django.contrib.auth import authenticate, login
-from django.views.generic import View
+from django.contrib.auth import authenticate, login, logout
+from django.views.generic import RedirectView, View
 from .models import Post
-from .forms import PostForm, UserForm
+from .forms import PostForm, UserForm, UserLoginForm
 
 def post_list(request):
     posts = Post.objects.filter(
@@ -87,3 +87,30 @@ class UserFormView(View):
                     return redirect('blog:post_list')
 
         return render(request, self.template_name, {'form':form})
+
+# similar set up to UserFormView class
+class UserLoginFormView(View):
+    form_class = UserLoginForm
+    template_name = 'blog/login_form.html'
+ 
+    def get(self, request):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form':form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
+        print(user.is_active())
+        if user is not None:
+            print(user.is_active())
+            if user.is_active:
+                login(request,user)
+                return redirect('blog:post_list')
+        return render(request, self.template_name, {'form':form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('blog:post_list')
