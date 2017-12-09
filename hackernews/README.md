@@ -24,9 +24,10 @@ GraphQL tutorial covered topics:
 
 
 **Dependecies**
-Python 3.5
-Django 2.0
-GraphQL 2.0
-Graphene-Django 2.0
+
+* Python 3.5
+* Django 2.0
+* GraphQL 2.0
+* Graphene-Django 2.0
 
 
