@@ -2,9 +2,9 @@
 
 **Description**
 
-Used [How To GraphQL Tutorial](https://www.howtographql.com/graphql-python/0-introduction/) to create a GraphQL API. 
+Used [How To GraphQL Tutorial](https://www.howtographql.com/graphql-python/0-introduction/) to mimic the basic backend of a [Hackernews post list](https://news.ycombinator.com/) in order to learn how to create a GraphQL API with Django 2.0. 
 
-GraphQL covered topics:
+GraphQL tutorial covered topics:
 
 1. Queries
 
@@ -21,4 +21,12 @@ GraphQL covered topics:
 7. Pagination
 
 8. Relay
+
+
+**Dependecies**
+Python 3.5
+Django 2.0
+GraphQL 2.0
+Graphene-Django 2.0
+
 
